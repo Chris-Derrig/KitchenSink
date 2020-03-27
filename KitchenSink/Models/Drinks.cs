@@ -9,11 +9,9 @@ namespace KitchenSink.Models
         {
             Recommendation = new HashSet<Recommendation>();
         }
-
         public int Id { get; set; }
         public string Category { get; set; }
         public bool NonAlcoholic { get; set; }
-
         public virtual ICollection<Recommendation> Recommendation { get; set; }
     }
 }

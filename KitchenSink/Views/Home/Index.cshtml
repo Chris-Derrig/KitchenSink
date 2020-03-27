@@ -4,77 +4,11 @@
 
 @model Recipes
 
-    @*<div class="row">
-        <div class="col-md-4">
-            <form method="post" asp-controller="Recipes" asp-action="GetRandomRecipe">
-                <div class="form-group">
-                    <label>Protein</label>
-                    <input type="text" name="protein" class="form-control" />
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Starch</label>
-                    <input type="text" name="starch" class="form-control" />
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Veggies</label>
-                    <input type="text" name="veggies" class="form-control" />
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Spices</label>
-                    <input type="text" name="spices" class="form-control" />
-                    <span class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label>Aromatic</label>
-                    <input type="text" name="aromatic" class="form-control" />
-                    <span class="text-danger"></span>
-                </div>
-                <button type="submit" class="btn btn-primary">Next</button>
-            </form>
-        </div>
-    </div>*@
-
-@*<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div class="form-group">
-                <label>Protein</label>
-                <input asp-for="IngredientName" class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label>Starch</label>
-                <input asp-for="IngredientName" class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label>Veggies</label>
-                <input asp-for="IngredientName" class="form-control" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label>Spices</label>
-                <input asp-for="IngredientName" class="form-control" />
-                <span asp-validation-for="IngredientName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label>Aromatic</label>
-                <input asp-for="IngredientName" class="form-control" />
-                <span asp-validation-for="IngredientName" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary" asp-controller="Recipes" asp-action="GetRandomRecipe">Next</button>
-        </form>
-    </div>
-</div>*@
     <div class="text-center">
-        <h1 class="display-4 home-page-title">Welcome to Kitchen Sink! </h1>
+        <h1 class="display-4 home-page-title">Welcome to Couch Potato! </h1>
         <h2 class="display-2 home-page-subtitle"> Your one-stop destination for planning your night in...because going out is the worst. </h2>
 
         <a asp-controller="Recipes" asp-action="GetStarted">
             <input type="button" class="text-center justify-content-xl-center get-started-button" value="Get Started" />
         </a>
-        @*<button type="button" class="text-center justify-content-xl-center get-started-button" asp-controller="Home" onClick="GetStarted()">Get Started</button>*@
     </div>

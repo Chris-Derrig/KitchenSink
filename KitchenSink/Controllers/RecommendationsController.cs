@@ -12,43 +12,12 @@ namespace KitchenSink.Controllers
 {
     public class RecommendationsController : Controller
     {
-        //private readonly KitchenSinkDBContext _context;
-        //public Cuisine cuisine;
-        //public Drink drink;
-        //public Movie movie;
         private IConfiguration _config;
         Random random = new Random();
-
-        //public RecommendationsController(KitchenSinkDBContext context)
-        //{
-        //    _context = context;
-        //}
         public RecommendationsController(IConfiguration config)
         {
             _config = config;
         }
-
-        // TO DO 
-
-        // call recommendation table w/ cuisine and drink, check for a match 
-        // lookup cuisine table, get ID 
-        // lookup drink table, get ID
-        // using those two ids, search for a recommendation 
-        // save results as a Recommendation object
-        // using that recommendation ID, return Rec. to view 
-        // grab genre ID
-        // return Movie details from movie controller to recommendation view
-        // Display minimum info for movie, recipe, drink (title, image, link to views) 
-
-
-        //get Recommendation from DB (auto-generated from scaffolding) 
-        //public IActionResult Index()
-        //{
-        //    var kitchenSinkDBContext = _context.Recommendation.Include(r => r.Genre);
-
-        //    return View(kitchenSinkDBContext.ToListAsync());
-        //}
-
         public IActionResult GetRec(string drinkCategory, string recipeCuisine)
         {
             KitchenSinkDBContext db = new KitchenSinkDBContext();
@@ -100,7 +69,6 @@ namespace KitchenSink.Controllers
                 }
             }
             return RedirectToAction("GetRandomMovie", "Movie", movieGenre);
-
         }
     }
 }

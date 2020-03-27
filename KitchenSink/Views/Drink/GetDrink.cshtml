@@ -3,35 +3,6 @@
     ViewData["Title"] = "GetDrink";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!--We use razor to help collect the list that has been passed to us from the Home Controller-->
-@model Drink
-<!--This small form is to take userinput and help display a new list of items based on the entry.
-    It curretly is not functioning properly-->
-@*<form asp-controller="Drink" asp-action="GetDrink">
-        <div>
-            <label class="form-group">Enter Alcohol</label>
-            <input type="text" name="alcohol"><br><br>
-            <input type="submit" class="form-control btn btn-primary">
-        </div>
-    </form>*@
-
-<!--This table is used to display the data from the list-->
-@*<table class=" table table-striped">
-    <tr>
-        <th style="text-align:left" class="align-middle"><h2>Drink Id</h2></th>
-        <th style="text-align:left" class="align-middle"><h2>Drink Name</h2></th>*@
-        @*<th style="text-align:left" class="align-middle"><h2>Drink Category</h2></th>*@
-    @*</tr>*@
-    <!--We us a foreach loop to iterate through the list and display the properties as needed-->
-    @*@foreach (Drink drink in Model)
-            {
-                <tr>
-                    <td>@drink.Id</td>
-                    <td>@drink.Name</td>
-                    <td>@drink.Image</td>
-                </tr>
-            }
-        </table>*@
 
 <table class="table table-striped">
     <tr>
@@ -41,7 +12,7 @@
     </tr>
     <tr>
         @* display the model (drink model in this case) information *@
-        <td>@Model.Name <br /><img src=@Model.Image width="200" height="200"/></td>
+        <td>@Model.Name <br /><img src=@Model.Image width="200" height="200" /></td>
         <td>
             @Model.strMeasure1 @Model.strIngredient1<br />
             @Model.strMeasure2 @Model.strIngredient2<br />
@@ -50,7 +21,7 @@
             @Model.strMeasure5 @Model.strIngredient5<br />
             @Model.strMeasure6 @Model.strIngredient6<br />
             @Model.strMeasure7 @Model.strIngredient7<br />
-            @Model.strMeasure8 @Model.strIngredient8<br /> 
+            @Model.strMeasure8 @Model.strIngredient8<br />
             @Model.strMeasure9 @Model.strIngredient9<br />
             @Model.strMeasure10 @Model.strIngredient10<br />
             @Model.strMeasure11 @Model.strIngredient11<br />

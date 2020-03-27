@@ -19,7 +19,6 @@ namespace KitchenSink.Models
         [JsonPropertyName("name")]
         public string Name { get; set; }
     }
-
     public class GenreArray
     {
         [JsonPropertyName("genres")]

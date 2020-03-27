@@ -13,12 +13,9 @@ namespace KitchenSink.Controllers
     public class MovieController : Controller
     {
         private IConfiguration _config;
-        //private JsonDocument jDoc;
-
         GenreArray genres = new GenreArray();
         List<Movie> movieList = new List<Movie>();
         Random random = new Random();
-
         public MovieController(IConfiguration config)
         {
             _config = config;
@@ -27,15 +24,6 @@ namespace KitchenSink.Controllers
         {
             return View();
         }
-
-        //TODO: Create method that takes in genreID returned from DB & calls API to return movie 
-        // 1) Call DB 
-        // 2) Return MovieDBId genre from DB 
-        // 3) Use this ID to make call to Movie DB, return movie 
-        // 4) Pass that to model to the view 
-
-
-        //TODO: Create method to return a random movie
         public async Task<IActionResult> GetGenre()
         {
             List<Genre> genreList = new List<Genre>();
@@ -50,7 +38,6 @@ namespace KitchenSink.Controllers
             }
             return View(genres);
         }
-
         public async Task<IActionResult> GetRandomMovie(int genre)
         {
             var MovieApiKey = _config["TheMovieDBApiKey"];
@@ -72,16 +59,14 @@ namespace KitchenSink.Controllers
                 }
                 else
                 {
-
                     foreach (var item in jsonList.EnumerateArray())
                     {
                         var movie = JsonSerializer.Deserialize<Movie>(item.ToString());
 
                         movieList.Add(movie);
                     }
-
+                    
                     Movie chosenMovie = movieList[random.Next(movieList.Count)];
-
                     return View(chosenMovie);
                 }
             }

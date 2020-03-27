@@ -9,7 +9,6 @@ namespace KitchenSink.Models
         {
             Recommendation = new HashSet<Recommendation>();
         }
-
         public int Id { get; set; }
         public string Cuisine1 { get; set; }
 

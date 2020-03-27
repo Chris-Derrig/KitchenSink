@@ -9,13 +9,11 @@ namespace KitchenSink.Models
 {
     public class Drink
     {
-        //public Drink() { }
         public Drink(string idDrink, string strDrink, string strCategory)
         {
             Id = idDrink;
             Name = strDrink;
             Category = strCategory;
-
         }
         public Drink() { }
         [JsonPropertyName("idDrink")]
@@ -30,6 +28,7 @@ namespace KitchenSink.Models
         public string Instructions { get; set; }
         [JsonPropertyName("strAlcoholic")]
         public string Alcoholic { get; set; }
+        
         //ingredients
         public string strIngredient1 { get; set; }
         public string strIngredient2 { get; set; }
@@ -46,6 +45,7 @@ namespace KitchenSink.Models
         public string strIngredient13 { get; set; }
         public string strIngredient14 { get; set; }
         public string strIngredient15 { get; set; }
+        
         //measures
         public string strMeasure1 { get; set; }
         public string strMeasure2 { get; set; }
@@ -62,19 +62,14 @@ namespace KitchenSink.Models
         public string strMeasure13 { get; set; }
         public string strMeasure14 { get; set; }
         public string strMeasure15 { get; set; }
-
     }
-
     public class DrinkArray
     {
         [JsonPropertyName("drinks")]
         public Drink[] Drinks { get; set; }
     }
-
-
     public class Rootobject
     {
         public Drink[] drinks { get; set; }
     }
-
 }

@@ -24,12 +24,10 @@ namespace KitchenSink.Controllers
         {
             _config = config;
         }
-
         public IActionResult GetStarted()
         {
             return View();
         }
-
         public async Task<IActionResult> GetRandomRecipe(string protein = null, string starch = null, string veggie=null, string spice=null, string aromatic=null)
         {
             var SpoonApiKey = _config["SpoonacularApiKey"];
@@ -40,9 +38,7 @@ namespace KitchenSink.Controllers
                 var stringResponse = await response.Content.ReadAsStringAsync();
 
                 JsonDocument jdoc = JsonDocument.Parse(stringResponse);
-
                 var jsonList = jdoc.RootElement.GetProperty("results");
-
                 var list = jsonList.GetArrayLength();
 
                 if (list == 0)
@@ -59,16 +55,13 @@ namespace KitchenSink.Controllers
                     }
 
                     Recipes chosenRecipe = mikeRecipe[random.Next(mikeRecipe.Count)];
-
                     var chosenId = chosenRecipe.Id;
 
                     using var response2 = await httpClient.GetAsync
                     ($"https://api.spoonacular.com/recipes/{chosenId}/information?includeNutrition=false&apiKey={SpoonApiKey}");
 
                     var stringResponse2 = await response2.Content.ReadAsStringAsync();
-
                     var recipes2 = JsonSerializer.Deserialize<Recipes>(stringResponse2.ToString());
-
                     return View(recipes2);
                 }
             }
